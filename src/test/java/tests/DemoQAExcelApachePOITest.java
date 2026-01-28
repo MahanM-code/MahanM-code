@@ -1,0 +1,59 @@
+package tests;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import base.BaseTest;
+import pages.LaunchPage;
+import pages.LoginPage;
+import pages.ProfilePage;
+import pages.RegisterPage;
+import utils.ExcelDataProvider;
+
+public class DemoQAExcelApachePOITest extends BaseTest {
+	
+	@Test(priority =0)
+	public void launchApplication()
+	{
+		LaunchPage launchPage = new LaunchPage(driver);
+		launchPage.openBookStoreApplication();
+		//Assert.assertTrue(driver.getCurrentUrl().contains("Book"));
+		
+	}
+	
+	@Test()
+	public void registerUser()
+	{
+		driver.get("https://demoqa.com/login");
+		RegisterPage registerPage = new RegisterPage(driver);
+		registerPage.clickRegister();
+		//registerPage.registerUser("John", "Doe", "john123", "Password@123");
+		
+			//9448635191
+	}
+	@Test(dataProvider = "excelLoginData",dataProviderClass = ExcelDataProvider.class)
+	    public void loginUser(String username, String password) {
+
+	        driver.get("https://demoqa.com/login");
+	        //RegisterPage registerPage = new RegisterPage(driver);
+	       // registerPage.clickRegister();
+	        LoginPage loginPage = new LoginPage(driver);
+	        loginPage.login(username, password);
+
+	        }
+	
+	@Test(dependsOnMethods = {"loginUser"} )
+	public void profilePage(String username)
+	{
+		ProfilePage profilepage = new ProfilePage(driver);
+				profilepage.navigatedToProfilePage(username);
+				
+	}
+	
+	//Note there are 2 tyoes to handle parallel execution one in with the testNG.xml 
+	//<suite name="Parallel Suite" parallel="methods" thread-count="3"> 
+	
+	//Second method is with the ExcelDataprovider @DataProvider(name = "excelLoginData", parallel = true)
+	
+
+}
