@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Automation Suite" parallel="methods" thread-count="3">
 <listeners>
@@ -9,16 +9,4 @@
                 <class name="DemoQAExcelApachePOITest"/>
         </classes>
     </test>
-=======
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Automation Suite" parallel="methods" thread-count="3">
-<listeners>
-        <listener class-name="listeners.TestListener"/>
-    </listeners>
-    <test name="TestNG DemoQA Tests">
-        <classes>
-                <class name="DemoQAExcelApachePOITest"/>
-        </classes>
-    </test>
->>>>>>> 2b5f5c691c193482b6ccd734954192d7fffbff1b
 </suite>
