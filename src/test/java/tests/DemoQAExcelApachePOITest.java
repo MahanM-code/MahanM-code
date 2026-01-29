@@ -29,7 +29,7 @@ public class DemoQAExcelApachePOITest extends BaseTest {
 		registerPage.clickRegister();
 		//registerPage.registerUser("John", "Doe", "john123", "Password@123");
 		
-			//9448635191
+			
 	}
 	@Test(dataProvider = "excelLoginData",dataProviderClass = ExcelDataProvider.class)
 	    public void loginUser(String username, String password) {

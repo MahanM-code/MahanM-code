@@ -31,11 +31,12 @@ public class TestListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
         BaseTest baseTest = (BaseTest) result.getInstance();
-        String screenshotPath =
-        		baseTest.captureScreenshot(result.getMethod().getMethodName());
 
-        ExtentTestManager.getTest().fail(result.getThrowable());
-        ExtentTestManager.getTest().addScreenCaptureFromPath(screenshotPath);
+        String screenshotPath = baseTest.captureScreenshot(result.getMethod().getMethodName());
+
+        ExtentTest test = ExtentTestManager.getTest();
+        test.fail(result.getThrowable());
+        test.addScreenCaptureFromPath(screenshotPath);
     }
     
     @Override

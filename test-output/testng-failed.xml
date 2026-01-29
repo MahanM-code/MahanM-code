@@ -7,9 +7,10 @@
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="loginUser"/>
+          <include name="loginUser" invocation-numbers="0"/>
           <include name="profilePage"/>
           <include name="launchApplication"/>
+          <include name="registerUser"/>
         </methods>
       </class> <!-- tests.DemoQAExcelApachePOITest -->
     </classes>
