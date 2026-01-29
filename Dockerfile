@@ -6,4 +6,4 @@ COPY pom.xml .
 COPY src ./src
 COPY testng.xml .
 
-RUN mvn test || true
+RUN mvn test
