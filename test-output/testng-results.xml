@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="0" failed="3" skipped="1">
+<testng-results ignored="0" total="4" passed="1" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-29T13:23:45 IST" name="Default suite" finished-at="2026-01-29T13:25:13 IST" duration-ms="87134">
+  <suite started-at="2026-01-30T00:06:24 IST" name="Default suite" finished-at="2026-01-30T00:07:39 IST" duration-ms="75434">
     <groups>
     </groups>
-    <test started-at="2026-01-29T13:23:45 IST" name="Default test" finished-at="2026-01-29T13:25:13 IST" duration-ms="87134">
+    <test started-at="2026-01-30T00:06:24 IST" name="Default test" finished-at="2026-01-30T00:07:39 IST" duration-ms="75434">
       <class name="tests.DemoQAExcelApachePOITest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.DemoQAExcelApachePOITest@6025e1b6]" started-at="2026-01-29T13:23:45 IST" name="setUp" finished-at="2026-01-29T13:24:10 IST" duration-ms="24916" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.DemoQAExcelApachePOITest@56e8b606]" started-at="2026-01-30T00:06:24 IST" name="setUp" finished-at="2026-01-30T00:07:09 IST" duration-ms="45377" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="launchApplication()[pri:0, instance:tests.DemoQAExcelApachePOITest@6025e1b6]" started-at="2026-01-29T13:24:10 IST" name="launchApplication" finished-at="2026-01-29T13:24:12 IST" duration-ms="1346" status="FAIL">
+        <test-method signature="launchApplication()[pri:0, instance:tests.DemoQAExcelApachePOITest@56e8b606]" started-at="2026-01-30T00:07:09 IST" name="launchApplication" finished-at="2026-01-30T00:07:10 IST" duration-ms="1152" status="FAIL">
           <exception class="org.openqa.selenium.ElementClickInterceptedException">
             <message>
               <![CDATA[element click intercepted: Element <h5>...</h5> is not clickable at point (141, 569). Other element would receive the click: <div id="fixedban" style="width:100%;margin:auto;text-align:center;float:none;overflow:hidden;display:scroll;position:fixed;bottom:0;z-index:9999999">...</div>
@@ -19,10 +19,10 @@
 Build info: version: '4.18.1', revision: 'b1d3319b48'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [10dc82a864e0e902bda23a45a84dfe89, clickElement {id=f.95333B9B4F9B56123EF327481CDA6C45.d.350F5403176ADC95D170DDE47BC94E3A.e.19}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.97, chrome: {chromedriverVersion: 144.0.7559.109 (6a8d5e49388..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61041}, goog:processID: 1420, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61041/devtoo..., se:cdpVersion: 144.0.7559.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (10dc82a864e0e902bda23a45a84dfe89)] -> xpath: //*[text()='Book Store Application']]
-Session ID: 10dc82a864e0e902bda23a45a84dfe89]]>
+Command: [13614c2786000566d8e4c526192e8522, clickElement {id=f.82EA495231D8E42B3CBCF974FCA23FFD.d.252AEAC88B7936543C01FE413A544A05.e.17}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.97, chrome: {chromedriverVersion: 144.0.7559.109 (6a8d5e49388..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53776}, goog:processID: 22700, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53776/devtoo..., se:cdpVersion: 144.0.7559.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (13614c2786000566d8e4c526192e8522)] -> xpath: //*[text()='Book Store Application']]
+Session ID: 13614c2786000566d8e4c526192e8522]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <h5>...</h5> is not clickable at point (141, 569). Other element would receive the click: <div id="fixedban" style="width:100%;margin:auto;text-align:center;float:none;overflow:hidden;display:scroll;position:fixed;bottom:0;z-index:9999999">...</div>
@@ -30,10 +30,10 @@ Session ID: 10dc82a864e0e902bda23a45a84dfe89]]>
 Build info: version: '4.18.1', revision: 'b1d3319b48'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [10dc82a864e0e902bda23a45a84dfe89, clickElement {id=f.95333B9B4F9B56123EF327481CDA6C45.d.350F5403176ADC95D170DDE47BC94E3A.e.19}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.97, chrome: {chromedriverVersion: 144.0.7559.109 (6a8d5e49388..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61041}, goog:processID: 1420, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61041/devtoo..., se:cdpVersion: 144.0.7559.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (10dc82a864e0e902bda23a45a84dfe89)] -> xpath: //*[text()='Book Store Application']]
-Session ID: 10dc82a864e0e902bda23a45a84dfe89
+Command: [13614c2786000566d8e4c526192e8522, clickElement {id=f.82EA495231D8E42B3CBCF974FCA23FFD.d.252AEAC88B7936543C01FE413A544A05.e.17}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.97, chrome: {chromedriverVersion: 144.0.7559.109 (6a8d5e49388..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53776}, goog:processID: 22700, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53776/devtoo..., se:cdpVersion: 144.0.7559.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (13614c2786000566d8e4c526192e8522)] -> xpath: //*[text()='Book Store Application']]
+Session ID: 13614c2786000566d8e4c526192e8522
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -47,7 +47,7 @@ at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
 at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
 at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
 at pages.LaunchPage.openBookStoreApplication(LaunchPage.java:17)
-at tests.DemoQAExcelApachePOITest.launchApplication(DemoQAExcelApachePOITest.java:19)
+at tests.DemoQAExcelApachePOITest.launchApplication(DemoQAExcelApachePOITest.java:23)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -80,15 +80,22 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.DemoQAExcelApachePOITest@6025e1b6]" started-at="2026-01-29T13:24:12 IST" name="tearDown" finished-at="2026-01-29T13:24:12 IST" duration-ms="334" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.DemoQAExcelApachePOITest@56e8b606]" started-at="2026-01-30T00:07:10 IST" name="tearDown" finished-at="2026-01-30T00:07:11 IST" duration-ms="744" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=launchApplication status=FAILURE method=DemoQAExcelApachePOITest.launchApplication()[pri:0, instance:tests.DemoQAExcelApachePOITest@56e8b606] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.DemoQAExcelApachePOITest@6025e1b6]" started-at="2026-01-29T13:24:13 IST" name="setUp" finished-at="2026-01-29T13:24:16 IST" duration-ms="3087" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.DemoQAExcelApachePOITest@56e8b606]" started-at="2026-01-30T00:07:12 IST" name="setUp" finished-at="2026-01-30T00:07:23 IST" duration-ms="11475" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="loginUser(java.lang.String,java.lang.String)[pri:0, instance:tests.DemoQAExcelApachePOITest@6025e1b6]" started-at="2026-01-29T13:24:16 IST" name="loginUser" data-provider="excelLoginData" finished-at="2026-01-29T13:24:58 IST" duration-ms="42191" status="FAIL">
+        <test-method signature="loginUser(java.lang.String,java.lang.String)[pri:0, instance:tests.DemoQAExcelApachePOITest@56e8b606]" started-at="2026-01-30T00:07:23 IST" name="loginUser" data-provider="excelLoginData" finished-at="2026-01-30T00:07:27 IST" duration-ms="3585" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -101,28 +108,91 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginUser -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.DemoQAExcelApachePOITest@56e8b606]" started-at="2026-01-30T00:07:27 IST" name="tearDown" finished-at="2026-01-30T00:07:27 IST" duration-ms="248" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginUser status=SUCCESS method=DemoQAExcelApachePOITest.loginUser(java.lang.String,java.lang.String)[pri:0, instance:tests.DemoQAExcelApachePOITest@56e8b606] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="profilePage(java.lang.String)[pri:0, instance:tests.DemoQAExcelApachePOITest@56e8b606]" started-at="2026-01-30T00:07:27 IST" name="profilePage" data-provider="excelLoginData" finished-at="2026-01-30T00:07:27 IST" duration-ms="39" status="FAIL">
+          <exception class="org.testng.internal.reflect.MethodMatcherException">
             <message>
-              <![CDATA[element click intercepted: Element <button id="login" type="button" class="btn btn-primary">...</button> is not clickable at point (833, 520). Other element would receive the click: <iframe frameborder="0" src="https://7c5ffb44bb50ca93539a05cc1cb4f015.safeframe.googlesyndication.com/safeframe/1-0-45/html/container.html" id="google_ads_iframe_/21849154601,22343295815/Ad.Plus-Anchor_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="728" height="90" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="private-state-token-redemption;attribution-reporting" aria-label="Advertisement" tabindex="0" data-google-container-id="1" style="border: 0px; vertical-align: bottom;" data-load-complete="true"></iframe>
-  (Session info: chrome=144.0.7559.97)
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [fbbe6aeb977b254b8715df9fe8111278, clickElement {id=f.E7EBC34A7436285EC24A87378463A465.d.9FB9BBCE605BE7311E5F4F091F4BDF2C.e.32}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.97, chrome: {chromedriverVersion: 144.0.7559.109 (6a8d5e49388..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51512}, goog:processID: 7068, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51512/devtoo..., se:cdpVersion: 144.0.7559.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (fbbe6aeb977b254b8715df9fe8111278)] -> xpath: //button[text()='Login']]
-Session ID: fbbe6aeb977b254b8715df9fe8111278]]>
+              <![CDATA[
+[public void tests.DemoQAExcelApachePOITest.profilePage(java.lang.String)] has no parameters defined but was found to be using a data provider (either explicitly specified or inherited from class level annotation).
+Data provider mismatch
+Method: profilePage([java.lang.String arg0])
+Arguments: [(java.lang.String) MahanM,(java.lang.String) Mahan@143]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button id="login" type="button" class="btn btn-primary">...</button> is not clickable at point (833, 520). Other element would receive the click: <iframe frameborder="0" src="https://7c5ffb44bb50ca93539a05cc1cb4f015.safeframe.googlesyndication.com/safeframe/1-0-45/html/container.html" id="google_ads_iframe_/21849154601,22343295815/Ad.Plus-Anchor_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="728" height="90" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="private-state-token-redemption;attribution-reporting" aria-label="Advertisement" tabindex="0" data-google-container-id="1" style="border: 0px; vertical-align: bottom;" data-load-complete="true"></iframe>
+              <![CDATA[org.testng.internal.reflect.MethodMatcherException: 
+[public void tests.DemoQAExcelApachePOITest.profilePage(java.lang.String)] has no parameters defined but was found to be using a data provider (either explicitly specified or inherited from class level annotation).
+Data provider mismatch
+Method: profilePage([java.lang.String arg0])
+Arguments: [(java.lang.String) MahanM,(java.lang.String) Mahan@143]
+at org.testng.internal.reflect.DataProviderMethodMatcher.getConformingArguments(DataProviderMethodMatcher.java:46)
+at org.testng.internal.Parameters.injectParameters(Parameters.java:915)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.internal.reflect.MethodMatcherException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- profilePage -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.DemoQAExcelApachePOITest@56e8b606]" started-at="2026-01-30T00:07:27 IST" name="setUp" finished-at="2026-01-30T00:07:34 IST" duration-ms="7040" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="registerUser()[pri:0, instance:tests.DemoQAExcelApachePOITest@56e8b606]" started-at="2026-01-30T00:07:34 IST" name="registerUser" finished-at="2026-01-30T00:07:38 IST" duration-ms="3746" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <button id="newUser" type="button" class="btn btn-primary">...</button> is not clickable at point (943, 562). Other element would receive the click: <iframe frameborder="0" src="https://9b2048121568f193b68225c1b3856329.safeframe.googlesyndication.com/safeframe/1-0-45/html/container.html" id="google_ads_iframe_/21849154601,22343295815/Ad.Plus-Anchor_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="728" height="90" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="private-state-token-redemption;attribution-reporting" aria-label="Advertisement" tabindex="0" data-google-container-id="1" style="border: 0px; vertical-align: bottom;" data-load-complete="true"></iframe>
   (Session info: chrome=144.0.7559.97)
 Build info: version: '4.18.1', revision: 'b1d3319b48'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [fbbe6aeb977b254b8715df9fe8111278, clickElement {id=f.E7EBC34A7436285EC24A87378463A465.d.9FB9BBCE605BE7311E5F4F091F4BDF2C.e.32}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.97, chrome: {chromedriverVersion: 144.0.7559.109 (6a8d5e49388..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51512}, goog:processID: 7068, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51512/devtoo..., se:cdpVersion: 144.0.7559.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (fbbe6aeb977b254b8715df9fe8111278)] -> xpath: //button[text()='Login']]
-Session ID: fbbe6aeb977b254b8715df9fe8111278
+Command: [aa734f8db474d9e782b8efe81152fbb7, clickElement {id=f.64133A56C85F465717CB132FCCF52354.d.32D9B06594420CADC5293BD3DA8D545F.e.27}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.97, chrome: {chromedriverVersion: 144.0.7559.109 (6a8d5e49388..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57130}, goog:processID: 13820, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57130/devtoo..., se:cdpVersion: 144.0.7559.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (aa734f8db474d9e782b8efe81152fbb7)] -> id: newUser]
+Session ID: aa734f8db474d9e782b8efe81152fbb7]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button id="newUser" type="button" class="btn btn-primary">...</button> is not clickable at point (943, 562). Other element would receive the click: <iframe frameborder="0" src="https://9b2048121568f193b68225c1b3856329.safeframe.googlesyndication.com/safeframe/1-0-45/html/container.html" id="google_ads_iframe_/21849154601,22343295815/Ad.Plus-Anchor_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="728" height="90" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="private-state-token-redemption;attribution-reporting" aria-label="Advertisement" tabindex="0" data-google-container-id="1" style="border: 0px; vertical-align: bottom;" data-load-complete="true"></iframe>
+  (Session info: chrome=144.0.7559.97)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [aa734f8db474d9e782b8efe81152fbb7, clickElement {id=f.64133A56C85F465717CB132FCCF52354.d.32D9B06594420CADC5293BD3DA8D545F.e.27}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.97, chrome: {chromedriverVersion: 144.0.7559.109 (6a8d5e49388..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57130}, goog:processID: 13820, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57130/devtoo..., se:cdpVersion: 144.0.7559.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (aa734f8db474d9e782b8efe81152fbb7)] -> id: newUser]
+Session ID: aa734f8db474d9e782b8efe81152fbb7
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -135,8 +205,8 @@ at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverComman
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
 at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
 at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-at pages.LoginPage.login(LoginPage.java:35)
-at tests.DemoQAExcelApachePOITest.loginUser(DemoQAExcelApachePOITest.java:41)
+at pages.RegisterPage.clickRegister(RegisterPage.java:24)
+at tests.DemoQAExcelApachePOITest.registerUser(DemoQAExcelApachePOITest.java:34)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -168,124 +238,18 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginUser -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.DemoQAExcelApachePOITest@6025e1b6]" started-at="2026-01-29T13:24:58 IST" name="tearDown" finished-at="2026-01-29T13:24:59 IST" duration-ms="373" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.DemoQAExcelApachePOITest@6025e1b6]" started-at="2026-01-29T13:24:59 IST" name="setUp" finished-at="2026-01-29T13:25:02 IST" duration-ms="2962" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="registerUser()[pri:0, instance:tests.DemoQAExcelApachePOITest@6025e1b6]" started-at="2026-01-29T13:25:02 IST" name="registerUser" finished-at="2026-01-29T13:25:12 IST" duration-ms="10518" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"#newUser"}
-  (Session info: chrome=144.0.7559.97)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a23e385d217a30c1a666ad861bacfa35, findElement {using=id, value=newUser}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.97, chrome: {chromedriverVersion: 144.0.7559.109 (6a8d5e49388..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51951}, goog:processID: 13456, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51951/devtoo..., se:cdpVersion: 144.0.7559.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a23e385d217a30c1a666ad861bacfa35]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#newUser"}
-  (Session info: chrome=144.0.7559.97)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a23e385d217a30c1a666ad861bacfa35, findElement {using=id, value=newUser}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.97, chrome: {chromedriverVersion: 144.0.7559.109 (6a8d5e49388..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51951}, goog:processID: 13456, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51951/devtoo..., se:cdpVersion: 144.0.7559.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a23e385d217a30c1a666ad861bacfa35
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at pages.RegisterPage.clickRegister(RegisterPage.java:24)
-at tests.DemoQAExcelApachePOITest.registerUser(DemoQAExcelApachePOITest.java:29)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
         </test-method> <!-- registerUser -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.DemoQAExcelApachePOITest@6025e1b6]" started-at="2026-01-29T13:25:12 IST" name="tearDown" finished-at="2026-01-29T13:25:13 IST" duration-ms="250" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.DemoQAExcelApachePOITest@56e8b606]" started-at="2026-01-30T00:07:38 IST" name="tearDown" finished-at="2026-01-30T00:07:39 IST" duration-ms="1026" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=registerUser status=FAILURE method=DemoQAExcelApachePOITest.registerUser()[pri:0, instance:tests.DemoQAExcelApachePOITest@56e8b606] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method signature="profilePage(java.lang.String)[pri:0, instance:tests.DemoQAExcelApachePOITest@6025e1b6]" started-at="2026-01-29T13:25:13 IST" name="profilePage" finished-at="2026-01-29T13:25:13 IST" depends-on-methods="tests.DemoQAExcelApachePOITest.loginUser" duration-ms="0" status="SKIP">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method tests.DemoQAExcelApachePOITest.profilePage() on instance tests.DemoQAExcelApachePOITest@6025e1b6 depends on not successfully finished methods 
-[tests.DemoQAExcelApachePOITest.loginUser() on instance tests.DemoQAExcelApachePOITest@6025e1b6]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method tests.DemoQAExcelApachePOITest.profilePage() on instance tests.DemoQAExcelApachePOITest@6025e1b6 depends on not successfully finished methods 
-[tests.DemoQAExcelApachePOITest.loginUser() on instance tests.DemoQAExcelApachePOITest@6025e1b6]
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- profilePage -->
       </class> <!-- tests.DemoQAExcelApachePOITest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

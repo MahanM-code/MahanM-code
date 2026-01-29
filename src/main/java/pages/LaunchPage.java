@@ -6,7 +6,7 @@
 	public class LaunchPage {
 
 	    private WebDriver driver;
-
+	   
 	    private By bookStoreApp = By.xpath("//*[text()='Book Store Application']");
 
 	    public LaunchPage(WebDriver driver) {

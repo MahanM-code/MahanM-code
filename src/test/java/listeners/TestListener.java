@@ -30,6 +30,7 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result) {
+    	try {
         BaseTest baseTest = (BaseTest) result.getInstance();
 
         String screenshotPath = baseTest.captureScreenshot(result.getMethod().getMethodName());
@@ -37,6 +38,11 @@ public class TestListener implements ITestListener {
         ExtentTest test = ExtentTestManager.getTest();
         test.fail(result.getThrowable());
         test.addScreenCaptureFromPath(screenshotPath);
+    	}
+    	catch (Exception e) {
+			// TODO: handle exception
+    		e.printStackTrace();
+		}
     }
     
     @Override

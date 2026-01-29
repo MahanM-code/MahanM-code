@@ -1,5 +1,7 @@
 package tests;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -11,6 +13,8 @@ import pages.RegisterPage;
 import utils.ExcelDataProvider;
 
 public class DemoQAExcelApachePOITest extends BaseTest {
+	
+	private static final Logger log = LogManager.getLogger(BaseTest.class);
 	
 	@Test(priority =0)
 	public void launchApplication()
@@ -24,6 +28,7 @@ public class DemoQAExcelApachePOITest extends BaseTest {
 	@Test()
 	public void registerUser()
 	{
+		log.info("Login started performing");
 		driver.get("https://demoqa.com/login");
 		RegisterPage registerPage = new RegisterPage(driver);
 		registerPage.clickRegister();
@@ -42,7 +47,7 @@ public class DemoQAExcelApachePOITest extends BaseTest {
 
 	        }
 	
-	@Test(dependsOnMethods = {"loginUser"} )
+	@Test(dataProvider = "excelLoginData",dataProviderClass = ExcelDataProvider.class)
 	public void profilePage(String username)
 	{
 		ProfilePage profilepage = new ProfilePage(driver);
