@@ -2,8 +2,8 @@ FROM maven:3.9-eclipse-temurin-17
 
 WORKDIR /app
 
-COPY pom.xml .
-COPY src ./src
-COPY testng.xml .
+# Copy everything first
+COPY . .
 
-RUN mvn test
+# Default command: run tests when container starts
+CMD ["mvn", "test"]
