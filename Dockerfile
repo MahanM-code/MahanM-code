@@ -1,12 +1,4 @@
-FROM node:18
-
+FROM maven:3.9-eclipse-temurin-17
 WORKDIR /app
-
-COPY package*.json ./
-RUN npm install
-
 COPY . .
-
-EXPOSE 3000
-
-CMD ["npm", "start"]
+RUN mvn clean test
