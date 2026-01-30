@@ -1,11 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        jdk 'JDK17'
-        maven 'Maven3'
-    }
-
     stages {
 
         stage('Checkout Code') {
@@ -14,15 +9,20 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Build Docker Image') {
             steps {
-                bat 'mvn clean compile'
+                bat 'docker build -t testng-app .'
             }
         }
 
-        stage('Run Tests') {
+        stage('Run Tests in Docker') {
             steps {
-                bat 'mvn test'
+                bat '''
+                docker run --rm ^
+                -v %WORKSPACE%\\test-output:/app/test-output ^
+                -v %WORKSPACE%\\target:/app/target ^
+                testng-app
+                '''
             }
         }
 
@@ -42,6 +42,7 @@ pipeline {
     post {
         always {
             archiveArtifacts artifacts: 'test-output/screenshots/*.png', allowEmptyArchive: true
+            junit 'target/surefire-reports/*.xml'
         }
     }
 }
