@@ -23,23 +23,20 @@ pipeline {
 
         stage('Run Tests in Docker') {
             steps {
-        bat '''
-        docker run --rm ^
-        -v "%WORKSPACE%\\target:/app/target" ^
-        -v "%WORKSPACE%\\test-output:/app/test-output" ^
-        testng-app
-        '''
-    }
+                bat '''
+                docker run --rm ^
+                -v "%WORKSPACE%/target:/app/target" ^
+                -v "%WORKSPACE%/test-output:/app/test-output" ^
+                %IMAGE_NAME%
+                '''
+            }
         }
     }
 
     post {
         always {
-
-            // Archive raw test results (optional but useful)
             archiveArtifacts artifacts: 'target/**/*.xml', fingerprint: true
 
-            // Publish TestNG HTML Report
             publishHTML(target: [
                 allowMissing: false,
                 alwaysLinkToLastBuild: true,
