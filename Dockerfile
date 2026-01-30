@@ -1,9 +1,10 @@
-FROM maven:3.9-eclipse-temurin-17
+FROM maven:3.9.6-eclipse-temurin-17
 
 WORKDIR /app
 
-# Copy everything first
+COPY pom.xml .
+RUN mvn dependency:go-offline
+
 COPY . .
 
-# Default command: run tests when container starts
 CMD ["mvn", "test"]

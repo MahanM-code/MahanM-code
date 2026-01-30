@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        IMAGE_NAME = "testng-app"
+    }
+
     stages {
 
         stage('Checkout Code') {
@@ -11,38 +15,38 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                bat 'docker build -t testng-app .'
+                script {
+                    docker.build("${IMAGE_NAME}")
+                }
             }
         }
 
         stage('Run Tests in Docker') {
             steps {
-                bat '''
-                docker run --rm ^
-                -v %WORKSPACE%\\test-output:/app/test-output ^
-                -v %WORKSPACE%\\target:/app/target ^
-                testng-app
-                '''
-            }
-        }
-
-        stage('Publish Extent Report') {
-            steps {
-                publishHTML(target: [
-                    reportDir: 'test-output',
-                    reportFiles: 'ExtentReport.html',
-                    reportName: 'Automation Test Report',
-                    keepAll: true,
-                    alwaysLinkToLastBuild: true
-                ])
+                script {
+                    sh '''
+                    docker run --rm \
+                    -v ${WORKSPACE}/target:/app/target \
+                    -v ${WORKSPACE}/test-output:/app/test-output \
+                    ${IMAGE_NAME}
+                    '''
+                }
             }
         }
     }
 
     post {
         always {
-            archiveArtifacts artifacts: 'test-output/screenshots/*.png', allowEmptyArchive: true
-            junit 'target/surefire-reports/*.xml'
+            archiveArtifacts artifacts: 'target/**/*.xml', fingerprint: true
+
+            publishHTML(target: [
+                allowMissing: false,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: 'test-output',
+                reportFiles: 'index.html',
+                reportName: 'TestNG Automation Report'
+            ])
         }
     }
 }
