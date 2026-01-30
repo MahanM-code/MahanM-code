@@ -23,13 +23,13 @@ pipeline {
 
         stage('Run Tests in Docker') {
             steps {
-                bat '''
-                docker run --rm ^
-                -v "%WORKSPACE%/target:/app/target" ^
-                -v "%WORKSPACE%/test-output:/app/test-output" ^
-                %IMAGE_NAME%
-                '''
-            }
+        bat '''
+        docker run --rm ^
+        -v "%WORKSPACE%\\target:/app/target" ^
+        -v "%WORKSPACE%\\test-output:/app/test-output" ^
+        testng-app
+        '''
+    }
         }
     }
 
