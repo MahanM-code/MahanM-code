@@ -15,30 +15,31 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                script {
-                    docker.build("${IMAGE_NAME}")
-                }
+                bat '''
+                docker build -t %IMAGE_NAME% .
+                '''
             }
         }
 
         stage('Run Tests in Docker') {
             steps {
-                script {
-                    sh '''
-                    docker run --rm \
-                    -v ${WORKSPACE}/target:/app/target \
-                    -v ${WORKSPACE}/test-output:/app/test-output \
-                    ${IMAGE_NAME}
-                    '''
-                }
+                bat '''
+                docker run --rm ^
+                -v "%WORKSPACE%/target:/app/target" ^
+                -v "%WORKSPACE%/test-output:/app/test-output" ^
+                %IMAGE_NAME%
+                '''
             }
         }
     }
 
     post {
         always {
+
+            // Archive raw test results (optional but useful)
             archiveArtifacts artifacts: 'target/**/*.xml', fingerprint: true
 
+            // Publish TestNG HTML Report
             publishHTML(target: [
                 allowMissing: false,
                 alwaysLinkToLastBuild: true,
