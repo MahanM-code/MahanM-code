@@ -84,7 +84,7 @@ public class BaseTest {
     	        }
     	    }*/
     	//Above line of code will be used when we want to run with selenium grid, Docker and Kubernates
-    	if (browser.equalsIgnoreCase("chrome")) //if not remote then run it in the local level with chrome
+    	/*if (browser.equalsIgnoreCase("chrome")) //if not remote then run it in the local level with chrome
         {
             driver = new ChromeDriver();
         }
@@ -100,7 +100,61 @@ public class BaseTest {
     	    
     	        	    
     	    //driver.quit();
-    	}
+    	}*/
+    	
+    	if (execution.equalsIgnoreCase("local")) {
+
+            switch (browser.toLowerCase()) {
+
+                case "chrome":
+                    ChromeOptions chromeOptions = new ChromeOptions();
+
+                    // Headless support for CI (GitHub Actions)
+                    if (System.getProperty("ci") != null) {
+                        chromeOptions.addArguments("--headless=new");
+                        chromeOptions.addArguments("--no-sandbox");
+                        chromeOptions.addArguments("--disable-dev-shm-usage");
+                    }
+
+                    driver = new ChromeDriver(chromeOptions);
+                    break;
+
+                case "firefox":
+                    FirefoxOptions firefoxOptions = new FirefoxOptions();
+
+                    if (System.getProperty("ci") != null) {
+                        firefoxOptions.addArguments("--headless");
+                    }
+
+                    driver = new FirefoxDriver(firefoxOptions);
+                    break;
+
+                default:
+                    throw new Exception("Browser not supported: " + browser);
+            }
+
+        } 
+        else if (execution.equalsIgnoreCase("remote")) {
+
+            String gridUrl = "http://localhost:4444/wd/hub";
+
+            if (browser.equalsIgnoreCase("chrome")) {
+                driver = new RemoteWebDriver(new URL(gridUrl), new ChromeOptions());
+            } 
+            else if (browser.equalsIgnoreCase("firefox")) {
+                driver = new RemoteWebDriver(new URL(gridUrl), new FirefoxOptions());
+            } 
+            else {
+                throw new Exception("Browser not supported for remote: " + browser);
+            }
+        }
+
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.get("https://demoqa.com");
+
+        log.info("Browser launched successfully");
+    }
     	/*
         driver = new ChromeDriver(); // Selenium Manager which is with selenium version4
         driver.manage().window().maximize();
