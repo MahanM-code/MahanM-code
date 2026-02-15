@@ -9,7 +9,6 @@
           <include name="tearDown"/>
           <include name="profilePage"/>
           <include name="launchApplication"/>
-          <include name="registerUser"/>
         </methods>
       </class> <!-- tests.DemoQAExcelApachePOITest -->
     </classes>

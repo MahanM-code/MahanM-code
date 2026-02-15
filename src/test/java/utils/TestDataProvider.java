@@ -15,3 +15,9 @@ public class TestDataProvider
 	}
 
 }
+
+/*It provides test data to TestNG test methods
+
+It supplies multiple sets of input values
+
+It helps in executing the same test with different data*/

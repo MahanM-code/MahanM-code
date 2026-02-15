@@ -12,6 +12,8 @@ import utils.TestDataProvider;
 
 public class DemoQADPTest extends BaseTest {
 	
+	//prepare for all the annotaions iof TestNG in the selenium
+	
 	@Test()
 	public void launchApplication()
 	{

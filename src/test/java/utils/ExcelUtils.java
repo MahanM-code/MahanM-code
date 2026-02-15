@@ -15,7 +15,8 @@ public class ExcelUtils {
 		Object[][] data = null;
 
 		// Reading the file from the fileInput stream
-		try (FileInputStream fis = new FileInputStream(filePath); Workbook workbook = new XSSFWorkbook(fis))
+		try (FileInputStream fis = new FileInputStream(filePath); 
+				Workbook workbook = new XSSFWorkbook(fis))
 		{
             //Reading the sheet which we have saved in the test-data folder which Name and Sheet should be the same
 			Sheet sheet = workbook.getSheet(sheetName);
@@ -44,3 +45,28 @@ public class ExcelUtils {
 		return data;
 	}
 }
+
+
+/*This class is called a Data Provider class in TestNG.
+It is used to implement Data Driven Testing.
+The @DataProvider annotation supplies multiple sets of data to a test method, so that the same test can be executed multiple times with different inputs.
+In this example, the method getLoginData() returns a two-dimensional Object array, where each row represents one set of username and password.
+This helps in keeping test data separate from test logic and improves reusability and maintainability.
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

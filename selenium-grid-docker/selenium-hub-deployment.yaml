@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: selenium-hub
+  namespace: selenium-grid
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: selenium-hub
+  template:
+    metadata:
+      labels:
+        app: selenium-hub
+    spec:
+      containers:
+        - name: selenium-hub
+          image: selenium/hub:4.18.1
+          ports:
+            - containerPort: 4444  # internal UI port
+            - containerPort: 4442  # event bus publish
+            - containerPort: 4443  # event bus subscribe
+          env:
+            - name: SE_EVENT_BUS_PUBLISH_PORT
+              value: "4442"
+            - name: SE_EVENT_BUS_SUBSCRIBE_PORT
+              value: "4443"
+            - name: SE_OPTS
+              value: "-host 0.0.0.0 -public-host localhost" # or NodeIP if running remotely

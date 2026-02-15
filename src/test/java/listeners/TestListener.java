@@ -11,6 +11,12 @@ import base.BaseTest;
 import utils.ExtentManager;
 import utils.ExtentTestManager;
 
+// TestNG listners is a bridge between TestNG execution and extent report generation
+//Tracking the test execution
+//loggin pass,fail,skip status
+//Taking screenshot on failure 
+//Creating the test nodes in Extent report and flushing the final report
+
 public class TestListener implements ITestListener {
 	private static ExtentReports extent = ExtentManager.getExtent();
     private static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
