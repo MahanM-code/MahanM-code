@@ -1,0 +1,34 @@
+name: Run TestNG Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Build Project
+        run: mvn clean install -DskipTests
+
+      - name: Run TestNG Tests
+        run: mvn clean test -Dci=true -Dsurefire.suiteXmlFiles=testng.xml
+
+      - name: Upload TestNG Reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: TestNG-Reports
+          path: test-output/
