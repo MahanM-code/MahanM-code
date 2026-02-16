@@ -32,3 +32,4 @@ jobs:
         with:
           name: TestNG-Reports
           path: test-output/
+          retention-days: 7
