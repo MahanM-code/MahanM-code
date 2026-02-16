@@ -47,45 +47,67 @@ public class BaseTest {
     @Parameters({"browser", "execution"})
     public void setUp(
             @Optional("chrome") String browser,
-            @Optional("local") String execution) throws Exception { //Runs before EVERY test method,even you can keep this for everybefore suite also Prepares browser environment
+            @Optional("local") String execution) throws Exception
+{ //Runs before EVERY test method,even you can keep this for everybefore suite also Prepares browser environment
     	log.info("===== Test execution started =====");
     
-    	/*8  if (execution.equalsIgnoreCase("remote")) {
+    	   	
+    	//Parameter shouldbe LOCAL with UI mode then it will pick the below line of code locally
+    	if (execution.equalsIgnoreCase("local")) {
 
-    	        if (browser.equalsIgnoreCase("chrome")) {
-    	            ChromeOptions options = new ChromeOptions();
-    	            driver = new RemoteWebDriver(
-    	                    new URL("http://localhost:4444"),
-    	                    options);
-    	            log.info("Execution Type: " + execution);
-    	            log.info("Browser Selected: " + browser);
-    	            
-    	        }
-    	        
-    	        
+            switch (browser.toLowerCase()) {
 
-    	        else if (browser.equalsIgnoreCase("firefox")) {
-    	            FirefoxOptions options = new FirefoxOptions();
-    	            driver = new RemoteWebDriver(
-    	                    new URL("http://localhost:4444"),
-    	                    options);
-    	            log.info("Execution Type: " + execution);
-    	            log.info("Browser Selected: " + browser);
-    	        }
+                case "chrome":
+                                       
+                    driver = new ChromeDriver();
+                    break;
 
-    	    } else {
+                case "firefox":
+                    
+                    driver = new FirefoxDriver();
+                    break;
 
-    	        if (browser.equalsIgnoreCase("chrome")) //if not remote then run it in the local level with chrome
-    	        {
-    	            driver = new ChromeDriver();
-    	        }
-    	        else if (browser.equalsIgnoreCase("firefox")) { //if not remote then run it in the local with firefox
-    	            driver = new FirefoxDriver();
-    	        }
-    	    }*/
-    	//Above line of code will be used when we want to run with selenium grid, Docker and Kubernates
-    	/*if (browser.equalsIgnoreCase("chrome")) //if not remote then run it in the local level with chrome
+                default:
+                    throw new Exception("Browser not supported: " + browser);
+            }
+    	}
+
+        
+        else if (execution.equalsIgnoreCase("remote")) {
+
+            String gridUrl = "http://localhost:4444/wd/hub";
+            if (browser.equalsIgnoreCase("chrome")) {
+	            ChromeOptions options = new ChromeOptions();
+	            driver = new RemoteWebDriver(
+	                    new URL(gridUrl),
+	                    options);
+	            log.info("Execution Type: " + execution);
+	            log.info("Browser Selected: " + browser);
+	            
+	        }
+	        
+	        
+
+	        else if (browser.equalsIgnoreCase("firefox")) {
+	            FirefoxOptions options = new FirefoxOptions();
+	            driver = new RemoteWebDriver(
+	                    new URL(gridUrl),
+	                    options);
+	            log.info("Execution Type: " + execution);
+	            log.info("Browser Selected: " + browser);
+	        }
+        }
+    	
+    	//Parameter is CHROME and want to run it locally with the Headless with git actions then execute the same
+    	if (browser.equalsIgnoreCase("chrome")) //if not remote then run it in the local level with chrome
         {
+                   ChromeOptions chromeOptions = new ChromeOptions();
+
+                    // Headless support for CI (GitHub Actions)
+                    if (System.getProperty("ci") != null) {
+                        chromeOptions.addArguments("--headless=new");
+                        chromeOptions.addArguments("--no-sandbox");
+                        chromeOptions.addArguments("--disable-dev-shm-usage");
             driver = new ChromeDriver();
         }
         else if (browser.equalsIgnoreCase("firefox")) { //if not remote then run it in the local with firefox
@@ -100,54 +122,7 @@ public class BaseTest {
     	    
     	        	    
     	    //driver.quit();
-    	}*/
-    	
-    	if (execution.equalsIgnoreCase("local")) {
-
-            switch (browser.toLowerCase()) {
-
-                case "chrome":
-                    ChromeOptions chromeOptions = new ChromeOptions();
-
-                    // Headless support for CI (GitHub Actions)
-                    if (System.getProperty("ci") != null) {
-                        chromeOptions.addArguments("--headless=new");
-                        chromeOptions.addArguments("--no-sandbox");
-                        chromeOptions.addArguments("--disable-dev-shm-usage");
-                    }
-
-                    driver = new ChromeDriver(chromeOptions);
-                    break;
-
-                case "firefox":
-                    FirefoxOptions firefoxOptions = new FirefoxOptions();
-
-                    if (System.getProperty("ci") != null) {
-                        firefoxOptions.addArguments("--headless");
-                    }
-
-                    driver = new FirefoxDriver(firefoxOptions);
-                    break;
-
-                default:
-                    throw new Exception("Browser not supported: " + browser);
-            }
-
-        } 
-        else if (execution.equalsIgnoreCase("remote")) {
-
-            String gridUrl = "http://localhost:4444/wd/hub";
-
-            if (browser.equalsIgnoreCase("chrome")) {
-                driver = new RemoteWebDriver(new URL(gridUrl), new ChromeOptions());
-            } 
-            else if (browser.equalsIgnoreCase("firefox")) {
-                driver = new RemoteWebDriver(new URL(gridUrl), new FirefoxOptions());
-            } 
-            else {
-                throw new Exception("Browser not supported for remote: " + browser);
-            }
-        }
+    	}
 
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

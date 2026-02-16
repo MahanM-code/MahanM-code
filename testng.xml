@@ -6,7 +6,7 @@
     </listeners>
     
    <test name="ChromeTest">
-        <parameter name="browser" value="chrome"/>
+        <parameter name="browser" value="chrome"/> 
         <parameter name="execution" value="remote"/>
         <parameter name="execution" value="local"/>
         <classes>
