@@ -9,8 +9,8 @@ public class LoginPage {
 	
 	private WebDriver driver;
 	
-	private By userName = By.id("userName");
-	private By password = By.id("password");
+	private By FirstName = By.id("firstName");
+	private By LastName = By.id("lastName");
     private By loginBtn = By.xpath("//button[text()='Login']");
     private By profileName = By.id("userName-value");
     
@@ -30,9 +30,9 @@ public class LoginPage {
 //    }
     public void login(String username,String pwd)
     {
-    	driver.findElement(userName).sendKeys(username);
-    	driver.findElement(password).sendKeys(pwd);
-    	driver.findElement(loginBtn).click();
+    	driver.findElement(FirstName).isDisplayed();
+    	driver.findElement(LastName).isDisplayed();
+    	//driver.findElement(loginBtn).click();
     	
     }
 

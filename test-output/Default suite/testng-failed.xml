@@ -7,8 +7,7 @@
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="loginUser" invocation-numbers="0"/>
-          <include name="profilePage"/>
+          <include name="loginUser"/>
           <include name="registerUser"/>
           <include name="launchApplication"/>
         </methods>

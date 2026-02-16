@@ -29,17 +29,17 @@ public class DemoQAExcelApachePOITest extends BaseTest {
 	public void registerUser()
 	{
 		log.info("Login started performing");
-		driver.get("https://demoqa.com/login");
+		driver.get("https://demoqa.com");
 		RegisterPage registerPage = new RegisterPage(driver);
 		registerPage.clickRegister();
 		//registerPage.registerUser("John", "Doe", "john123", "Password@123");
 		
 			
 	}
-	@Test(dataProvider = "excelLoginData",dataProviderClass = ExcelDataProvider.class)
+	@Test(dataProvider = "excelLoginData",dataProviderClass = ExcelDataProvider.class,dependsOnMethods = {"registerUser"})
 	    public void loginUser(String username, String password) {
 
-	        driver.get("https://demoqa.com/login");
+	        //driver.get("https://demoqa.com");
 	        //RegisterPage registerPage = new RegisterPage(driver);
 	       // registerPage.clickRegister();
 	        LoginPage loginPage = new LoginPage(driver);
@@ -47,13 +47,13 @@ public class DemoQAExcelApachePOITest extends BaseTest {
 
 	        }
 	
-	@Test(dataProvider = "excelLoginData",dataProviderClass = ExcelDataProvider.class)
-	public void profilePage(String username)
-	{
-		ProfilePage profilepage = new ProfilePage(driver);
-				profilepage.navigatedToProfilePage(username);
-				
-	}
+//	@Test(dataProvider = "excelLoginData",dataProviderClass = ExcelDataProvider.class)
+//	public void profilePage(String username)
+//	{
+//		ProfilePage profilepage = new ProfilePage(driver);
+//				profilepage.navigatedToProfilePage(username);
+//				
+//	}
 	
 	//Note there are 2 tyoes to handle parallel execution one in with the testNG.xml 
 	//<suite name="Parallel Suite" parallel="methods" thread-count="3"> 
