@@ -164,6 +164,7 @@ public class BaseTest {
         if (DriverThread.getDriver() != null) 
         {
             DriverThread.getDriver().quit();
+            DriverThread.unload();
         }
     }
     }
