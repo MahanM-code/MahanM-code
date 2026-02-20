@@ -10,24 +10,24 @@ public class RegisterPage {
 	
 	private WebDriver driver;
 	
-	private By forms =By.id("//*[contains(.,'Forms') and @class =\"card-body\"]");
-	private By practiseFrom=By.xpath("//span[text()='Practice Form']");
-	private By firstName = By.id("firstname");
-    private By lastName = By.id("lastname");
-    private By userName = By.id("userName");
-    private By password = By.id("password");
-    private By registerSubmit = By.id("register");
-	
-	public RegisterPage(WebDriver driver)
+	private By logo =By.className("tools-qa-header__logo");
+	private By seleniumtrainingLink=By.xpath("(//a[contains(text(),'Selenium Training')])[1]");	
+	public RegisterPage()
 	{
-		this.driver=driver;
+		this.driver=DriverThread.getDriver();
 	}
 	
 	public void clickRegister()
 	{
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.findElement(forms).click();
-		driver.findElement(practiseFrom).click();
+		System.out.println("Hey due i am here");
+		driver.findElement(logo).click();
+		System.out.println("clicking");
+		
+		driver.findElement(seleniumtrainingLink).click();
+		
+		System.out.println("selenium traning link clicked");
+		//driver.findElement(practiseFrom).click();
 	}
 	
 //	public void registerUser(String fName, String lName,String uName,String pwd)

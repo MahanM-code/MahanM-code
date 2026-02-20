@@ -14,10 +14,9 @@ public class LoginPage {
     private By loginBtn = By.xpath("//button[text()='Login']");
     private By profileName = By.id("userName-value");
     
-    
-    public LoginPage(WebDriver driver)
-    {
-    	this.driver=driver;
+    public  LoginPage() {
+    	
+        this.driver = DriverThread.getDriver();
     }
     
 //    public void login(String MahanM )

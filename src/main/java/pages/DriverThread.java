@@ -1,9 +1,9 @@
-package utils;
+package pages;
 
 import org.openqa.selenium.WebDriver;
 
 
-public class DriverManager
+public class DriverThread
 {
 	private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 

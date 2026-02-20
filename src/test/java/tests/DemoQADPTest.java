@@ -17,8 +17,8 @@ public class DemoQADPTest extends BaseTest {
 	@Test()
 	public void launchApplication()
 	{
-		LaunchPage launchPage = new LaunchPage(driver);
-		launchPage.openBookStoreApplication();
+		LaunchPage launchPage = new LaunchPage();
+		//launchPage.openBookStoreApplication();
 		//Assert.assertTrue(driver.getCurrentUrl().contains("Book"));
 		
 	}
@@ -26,8 +26,8 @@ public class DemoQADPTest extends BaseTest {
 	@Test()
 	public void registerUser()
 	{
-		driver.get("https://demoqa.com/login");
-		RegisterPage registerPage = new RegisterPage(driver);
+		
+		RegisterPage registerPage = new RegisterPage();
 		registerPage.clickRegister();
 		//registerPage.registerUser("John", "Doe", "john123", "Password@123");
 		
@@ -37,8 +37,8 @@ public class DemoQADPTest extends BaseTest {
 	//@Test
 	public void loginUser(String username, String password)
 	{
-		driver.get("https://demoqa.com/login");
-		LoginPage loginPage = new LoginPage(driver);
+		
+		LoginPage loginPage = new LoginPage();
 		
 		loginPage.login(username, password);
 		//Assert.assertEquals(loginPage.getLoggedInUser(), "MahanM");
@@ -47,7 +47,7 @@ public class DemoQADPTest extends BaseTest {
 	@Test(dependsOnMethods = {"loginUser"} )
 	public void profilePage(String username)
 	{
-		ProfilePage profilepage = new ProfilePage(driver);
+		ProfilePage profilepage = new ProfilePage(null);
 				profilepage.navigatedToProfilePage(username);
 				
 	}

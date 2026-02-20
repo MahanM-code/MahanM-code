@@ -14,6 +14,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
+import pages.DriverThread;
 import utils.ExtentManager;
 
 import java.io.File;
@@ -35,13 +36,12 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class BaseTest {
 
-    protected WebDriver driver; //Makes driver available to all child test classes Any test extending BaseTest can use driver directly
+   // protected WebDriver driver; //Makes driver available to all child test classes Any test extending BaseTest can use driver directly
     
     //Used for logging test execution steps
     //Professional logging instead of System.out.println
     private static final Logger log = LogManager.getLogger(BaseTest.class);
     
-   
     
     @BeforeMethod 
     @Parameters({"browser", "execution"})
@@ -50,8 +50,9 @@ public class BaseTest {
             @Optional("local") String execution) throws Exception
 { //Runs before EVERY test method,even you can keep this for everybefore suite also Prepares browser environment
     	log.info("===== Test execution started =====");
-    
-    	   	
+    	
+    	WebDriver driver = null;
+    	    	   	
     	//Parameter shouldbe LOCAL with UI mode then it will pick the below line of code locally
     	if (execution.equalsIgnoreCase("local")) {
 
@@ -77,24 +78,18 @@ public class BaseTest {
 
             String gridUrl = "http://localhost:4444/wd/hub";
             if (browser.equalsIgnoreCase("chrome")) {
-	            ChromeOptions options = new ChromeOptions();
-	            driver = new RemoteWebDriver(
-	                    new URL(gridUrl),
-	                    options);
-	            log.info("Execution Type: " + execution);
-	            log.info("Browser Selected: " + browser);
+	            driver = new RemoteWebDriver(new URL(gridUrl),new ChromeOptions());
+//	            log.info("Execution Type: " + execution);
+//	            log.info("Browser Selected: " + browser);
 	            
 	        }
 	        
 	        
 
 	        else if (browser.equalsIgnoreCase("firefox")) {
-	            FirefoxOptions options = new FirefoxOptions();
-	            driver = new RemoteWebDriver(
-	                    new URL(gridUrl),
-	                    options);
-	            log.info("Execution Type: " + execution);
-	            log.info("Browser Selected: " + browser);
+	        	driver = new RemoteWebDriver(new URL(gridUrl),new ChromeOptions());
+//	            log.info("Execution Type: " + execution);
+//	            log.info("Browser Selected: " + browser);
 	        }
         }
     	
@@ -113,23 +108,16 @@ public class BaseTest {
         else if (browser.equalsIgnoreCase("firefox")) { //if not remote then run it in the local with firefox
             driver = new FirefoxDriver();
         }
-
-    	    driver.manage().window().maximize();
-    	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-    	    driver.get("https://demoqa.com");
+            DriverThread.setDriver(driver);
+            DriverThread.getDriver().manage().window().maximize();
+            DriverThread.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    	    DriverThread.getDriver().get("https://www.toolsqa.com/");
 
     	    log.info("Browser Launched Successfully");
     	    
     	        	    
-    	    //driver.quit();
-    	}
-
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get("https://demoqa.com");
-
-        log.info("Browser launched successfully");
-    }
+    	    }
+}
     	/*
         driver = new ChromeDriver(); // Selenium Manager which is with selenium version4
         driver.manage().window().maximize();
@@ -142,7 +130,7 @@ public class BaseTest {
         
     public String captureScreenshot(String testName)  { //automatically capture screenshot when a test fails 
     	//callig this method on on test failure in the testNG listers
-    	
+    	WebDriver driver = DriverThread.getDriver();
         String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss_SSS")
                 .format(new Date());
 
@@ -173,9 +161,9 @@ public class BaseTest {
         {
             captureScreenshot(result.getName());
         }
-        if (driver != null) 
+        if (DriverThread.getDriver() != null) 
         {
-            driver.quit();
+            DriverThread.getDriver().quit();
         }
     }
     }
